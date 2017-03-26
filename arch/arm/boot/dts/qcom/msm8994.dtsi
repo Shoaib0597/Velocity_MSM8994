@@ -3202,6 +3202,7 @@
 		};
 	};
 
+	#ifndef CONFIG_FRANCO_THERMAL
 	qcom,msm-thermal {
 		compatible = "qcom,msm-thermal";
 		qcom,sensor-id = <7>;
@@ -3255,6 +3256,7 @@
 			qcom,freq-req;
 		};
 	};
+	#endif
 
 	qcom,bcl {
 		compatible = "qcom,bcl";
