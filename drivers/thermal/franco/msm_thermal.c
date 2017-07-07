@@ -43,10 +43,17 @@
 int TEMP_THRESHOLD 	= _temp_threshold;
 int TEMP_STEP 		= _temp_step;
 int LEVEL_HOT 		= _temp_threshold + _temp_step;
-int FREQ_HOT 		= 800000;
+
 #if (NR_CPUS == 6 || NR_CPUS == 8)
-int FREQ_WARM 		= 1113600;
+    #ifdef CONFIG_ARCH_MSM8994
+           int FREQ_HOT 		= 864000;
+	   int FREQ_WARM 		= 1248000;
+    #else
+        int FREQ_HOT 		= 800000;
+        int FREQ_WARM 		= 1113600;
+    #endif
 #else
+int FREQ_HOT 		= 800000;
 int FREQ_WARM 		= 1094400;
 #endif
 
